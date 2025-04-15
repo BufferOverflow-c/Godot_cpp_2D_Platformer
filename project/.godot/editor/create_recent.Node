@@ -1,0 +1,14 @@
+Sprite2D
+CollisionShape2D
+Area2D
+Node
+MovingPlatform
+AnimatableBody2D
+RemoteTransform2D
+PathFollow2D
+Path2D
+AnimationPlayer
+Camera2D
+Player
+TileMap
+Timer
