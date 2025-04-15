@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://cv7rou0mndmg1"]
 
-[ext_resource type="PackedScene" uid="uid://ctneebh8tl2p0" path="res://assets/scenes/areas/area_template.tscn" id="1_blyc0"]
+[ext_resource type="PackedScene" uid="uid://ctneebh8tl2p0" path="res://assets/scenes/area functionality/area_template.tscn" id="1_blyc0"]
 
 [node name="AreaTemplate" instance=ExtResource("1_blyc0")]
 
@@ -9,4 +9,6 @@ tile_map_data = PackedByteArray("AAAGAAUAAAABAAYAAAAGAAQAAAABAAUAAAAGAAMAAAABAAU
 
 [node name="Player" parent="." index="1"]
 position = Vector2(0, -20265.1)
-velocity = Vector2(0, -450)
+
+[node name="AreaExit" parent="." index="3"]
+position = Vector2(472, -47)

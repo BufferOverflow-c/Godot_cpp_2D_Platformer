@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b77gyw0pb7g38" path="res://assets/sprites/portal.png" id="1_w2lsf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24wep"]
-radius = 11.0
+radius = 8.0
 
-[node name="AreaExit" type="Area2D"]
+[node name="AreaExit" type="AreaExit"]
+collision_layer = 65536
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
 texture = ExtResource("1_w2lsf")
 flip_v = true
 region_enabled = true

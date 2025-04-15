@@ -40,6 +40,7 @@ void Player::movement(const double delta) {
 
     if(direction == 1) {
         get_node<Sprite2D>("Sprite2D")->set_flip_h(false);
+
     } else if(direction == -1) {
         get_node<Sprite2D>("Sprite2D")->set_flip_h(true);
     }

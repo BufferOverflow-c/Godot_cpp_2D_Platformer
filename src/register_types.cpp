@@ -1,7 +1,9 @@
 #include "register_types.h"
 
 #include "entity/player.hpp"
-#include "entity/moving_platform.hpp"
+#include "entity/obstacles/moving_platform.hpp"
+#include "entity/portal/area_exit.hpp"
+//#include "game_manager/game_manager.hpp"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -15,6 +17,8 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
   }
     GDREGISTER_CLASS(Player);
     GDREGISTER_CLASS(MovingPlatform);
+    GDREGISTER_CLASS(AreaExit);
+    //GDREGISTER_CLASS(GameManager);
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

@@ -15,6 +15,10 @@ config/version="Pre-Alpha 0.1"
 run/main_scene="uid://ctneebh8tl2p0"
 config/features=PackedStringArray("4.4")
 
+[autoload]
+
+GameManager="*res://assets/scripts/game_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -58,6 +62,7 @@ dash={
 2d_physics/layer_1="player"
 2d_physics/layer_9="ground"
 2d_physics/layer_10="one_way_ground"
+2d_physics/layer_17="transitions"
 
 [rendering]
 

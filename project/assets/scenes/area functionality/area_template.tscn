@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://ctneebh8tl2p0"]
+[gd_scene load_steps=6 format=4 uid="uid://ctneebh8tl2p0"]
 
 [ext_resource type="Texture2D" uid="uid://ntb0befljsre" path="res://assets/sprites/tiles_1.png" id="1_db1nh"]
 [ext_resource type="PackedScene" uid="uid://f33jmnl2c1aa" path="res://assets/scenes/player.tscn" id="2_o23ij"]
+[ext_resource type="PackedScene" uid="uid://ecf0gsku1v0r" path="res://assets/scenes/area functionality/area_exit.tscn" id="3_uh5x1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o23ij"]
 texture = ExtResource("1_db1nh")
@@ -300,3 +301,6 @@ tile_set = SubResource("TileSet_sr7qv")
 [node name="Player" parent="." instance=ExtResource("2_o23ij")]
 
 [node name="Platforms" type="Node" parent="."]
+
+[node name="AreaExit" parent="." instance=ExtResource("3_uh5x1")]
+position = Vector2(97, -12)
