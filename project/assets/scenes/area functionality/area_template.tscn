@@ -304,3 +304,5 @@ tile_set = SubResource("TileSet_sr7qv")
 
 [node name="AreaExit" parent="." instance=ExtResource("3_uh5x1")]
 position = Vector2(97, -12)
+
+[node name="GameManager" type="GameManager" parent="."]

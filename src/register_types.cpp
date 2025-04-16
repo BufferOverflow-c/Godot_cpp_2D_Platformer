@@ -3,13 +3,16 @@
 #include "entity/player.hpp"
 #include "entity/obstacles/moving_platform.hpp"
 #include "entity/portal/area_exit.hpp"
-//#include "game_manager/game_manager.hpp"
+#include "game_manager/game_manager.hpp"
 
+#include <godot_cpp/classes/engine.hpp>
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 
 using namespace godot;
+
+static GameManager *GameManager_singleton = nullptr;
 
 void initialize_example_module(ModuleInitializationLevel p_level) {
   if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
@@ -18,13 +21,20 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
     GDREGISTER_CLASS(Player);
     GDREGISTER_CLASS(MovingPlatform);
     GDREGISTER_CLASS(AreaExit);
-    //GDREGISTER_CLASS(GameManager);
+
+    GDREGISTER_CLASS(GameManager);
+    GameManager_singleton = memnew(GameManager);
+    Engine::get_singleton()->register_singleton("GameManager", GameManager::get_singleton());
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
   if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
     return;
   }
+
+    Engine::get_singleton()->unregister_singleton("GameManager");
+    memdelete(GameManager_singleton);
+    GameManager_singleton = nullptr;
 }
 
 extern "C" {

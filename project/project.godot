@@ -15,10 +15,6 @@ config/version="Pre-Alpha 0.1"
 run/main_scene="uid://ctneebh8tl2p0"
 config/features=PackedStringArray("4.4")
 
-[autoload]
-
-GameManager="*res://assets/scripts/game_manager.gd"
-
 [display]
 
 window/size/viewport_width=1920
