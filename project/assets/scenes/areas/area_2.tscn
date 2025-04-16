@@ -9,3 +9,6 @@ tile_map_data = PackedByteArray("AAAGAAUAAAABAAYAAAAGAAQAAAABAAUAAAAGAAMAAAABAAU
 
 [node name="AreaExit" parent="." index="3"]
 position = Vector2(472, -47)
+
+[node name="GameManager" parent="." index="4"]
+area_path = "res://assets/scenes/area functionality/area_template.tscn"

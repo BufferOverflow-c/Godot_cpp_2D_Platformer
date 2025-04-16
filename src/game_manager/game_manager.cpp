@@ -25,11 +25,17 @@ GameManager *GameManager::get_singleton() {
 	return singleton;
 }
 
-void GameManager::next_level() {
+void GameManager::next_level(const String &p_path) {
     //Ref<Script> game_manager_script = ResourceLoader::get_singleton()->load("res://assets/scripts/game_manager.gd", "Script");
     //String path = game_manager_script->call("set_next_level");
-    ++current_level;
-    String path = area_path + std::to_string(current_level).c_str() + ".tscn";
-    SceneTree *scene_tree = get_tree();
-    scene_tree->change_scene_to_file(path);
+    if(area_path != "") {
+        SceneTree *scene_tree = get_tree();
+        scene_tree->change_scene_to_file(area_path);
+    } else {
+        ++current_level;
+        area_path = "res://assets/scenes/areas/area_";
+        String path = area_path + std::to_string(current_level).c_str() + ".tscn";
+        SceneTree *scene_tree = get_tree();
+        scene_tree->change_scene_to_file(path);
+    }
 }
