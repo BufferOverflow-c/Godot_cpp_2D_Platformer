@@ -9,6 +9,8 @@
 
 #include <godot_cpp/variant/utility_functions.hpp>
 
+#include "portal/area_exit.hpp"
+
 using namespace godot;
 
 Player::Player() = default;

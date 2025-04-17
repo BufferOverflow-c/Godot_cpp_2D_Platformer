@@ -6,6 +6,7 @@
 radius = 8.0
 
 [node name="AreaExit" type="AreaExit"]
+is_open = false
 collision_layer = 65536
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -13,7 +14,7 @@ z_index = -10
 texture = ExtResource("1_w2lsf")
 flip_v = true
 region_enabled = true
-region_rect = Rect2(22, 0, 22, 22)
+region_rect = Rect2(0, 0, 22, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_24wep")

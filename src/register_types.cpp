@@ -2,7 +2,9 @@
 
 #include "entity/player.hpp"
 #include "entity/obstacles/moving_platform.hpp"
+#include "entity/pickups/energy_cell.hpp"
 #include "entity/portal/area_exit.hpp"
+
 #include "game_manager/game_manager.hpp"
 
 #include <godot_cpp/classes/engine.hpp>
@@ -20,6 +22,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
   }
     GDREGISTER_CLASS(Player);
     GDREGISTER_CLASS(MovingPlatform);
+    GDREGISTER_CLASS(EnergyCell);
     GDREGISTER_CLASS(AreaExit);
 
     GDREGISTER_CLASS(GameManager);

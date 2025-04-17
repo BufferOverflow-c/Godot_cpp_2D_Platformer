@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://ctneebh8tl2p0"]
+[gd_scene load_steps=7 format=4 uid="uid://ctneebh8tl2p0"]
 
 [ext_resource type="Texture2D" uid="uid://ntb0befljsre" path="res://assets/sprites/tiles_1.png" id="1_db1nh"]
-[ext_resource type="PackedScene" uid="uid://f33jmnl2c1aa" path="res://assets/scenes/player.tscn" id="2_o23ij"]
+[ext_resource type="PackedScene" uid="uid://f33jmnl2c1aa" path="res://assets/scenes/entities/player.tscn" id="2_o23ij"]
 [ext_resource type="PackedScene" uid="uid://ecf0gsku1v0r" path="res://assets/scenes/area functionality/area_exit.tscn" id="3_uh5x1"]
+[ext_resource type="PackedScene" uid="uid://v5xmvpx6fw0i" path="res://assets/scenes/pickups/energy_cell.tscn" id="4_q3j5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o23ij"]
 texture = ExtResource("1_db1nh")
@@ -306,3 +307,18 @@ tile_set = SubResource("TileSet_sr7qv")
 position = Vector2(97, -12)
 
 [node name="GameManager" type="GameManager" parent="."]
+
+[node name="EnergyCells" type="Node2D" parent="."]
+z_index = 1
+
+[node name="EnergyCell" parent="EnergyCells" instance=ExtResource("4_q3j5r")]
+position = Vector2(15, -10)
+
+[node name="EnergyCell2" parent="EnergyCells" instance=ExtResource("4_q3j5r")]
+position = Vector2(30, -10)
+
+[node name="EnergyCell3" parent="EnergyCells" instance=ExtResource("4_q3j5r")]
+position = Vector2(45, -10)
+
+[node name="EnergyCell4" parent="EnergyCells" instance=ExtResource("4_q3j5r")]
+position = Vector2(60, -10)

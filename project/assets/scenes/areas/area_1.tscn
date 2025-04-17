@@ -9,3 +9,6 @@ tile_map_data = PackedByteArray("AAAGAAUAAAABAAYAAAAGAAQAAAABAAUAAAAGAAMAAAABAAU
 
 [node name="AreaExit" parent="." index="3"]
 position = Vector2(401, -12)
+
+[node name="EnergyCell4" parent="EnergyCells" index="3"]
+position = Vector2(351, -13)

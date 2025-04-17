@@ -24,6 +24,7 @@ public:
     double get_speed_modifier() const { return speed_modifier; }
     double get_jump_modifier() const { return jump_modifier; }
     double get_gravity_modifier() const { return gravity_modifier; }
+    //int32_t get_energy_cells_collected() const { return energy_cells_collected; }
 
     // setters
     void set_speed(const double p_speed) { speed = p_speed; }
@@ -31,6 +32,7 @@ public:
     void set_speed_modifier(const double p_speed_modifier) { speed_modifier = p_speed_modifier; }
     void set_jump_modifier(const double p_jump_modifier) { jump_modifier = p_jump_modifier; }
     void set_gravity_modifier(const double p_gravity_modifier) { gravity_modifier = p_gravity_modifier; }
+    //void set_energy_cells_collected(const int32_t p_energy_cells_collected) { energy_cells_collected = p_energy_cells_collected; }
 
 protected:
     static void _bind_methods() {
@@ -50,6 +52,9 @@ protected:
         ClassDB::bind_method(D_METHOD("get_gravity_modifier"), &Player::get_gravity_modifier);
         ClassDB::bind_method(D_METHOD("set_gravity_modifier", "p_gravity_modifier"), &Player::set_gravity_modifier);
 
+        //ClassDB::bind_method(D_METHOD("get_energy_cells_collected"), &Player::get_energy_cells_collected);
+        //ClassDB::bind_method(D_METHOD("set_energy_cells_collected", "p_energy_cells_collected"), &Player::set_energy_cells_collected);
+
         // methods
         ClassDB::bind_method(D_METHOD("movement", "delta"), &Player::movement);
 
@@ -57,6 +62,7 @@ protected:
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed_modifier"), "set_speed_modifier", "get_speed_modifier");
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "jump_modifier"), "set_jump_modifier", "get_jump_modifier");
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "gravity_modifier"), "set_gravity_modifier", "get_gravity_modifier");
+        //ADD_PROPERTY(PropertyInfo(Variant::INT, "cells_collected"), "set_energy_cells_collected", "get_energy_cells_collected");
 
         // signals
 
@@ -79,6 +85,7 @@ private:
     double jump_modifier{45.0};
     double gravity_modifier{3.0};
 
+    //int32_t energy_cells_collected{};
 
 };
 }
