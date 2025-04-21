@@ -11,10 +11,10 @@ void EnergyCell::_ready() {
 }
 
 void EnergyCell::_on_body_entered(CharacterBody2D *body) {
-    Player *player = get_node<Player>("../../Player");
+    Player *player = get_node<Player>("../../../../Player");
     if(body == player) {
         if(player && overlaps_body(body)) {
-            get_node<GameManager>("../../GameManager")->add_energy_cell();
+            get_node<GameManager>("../../../../GameManager")->add_energy_cell();
             queue_free();
         }
     }

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkmyl6lpca4pt"]
+
+[ext_resource type="PackedScene" uid="uid://f33jmnl2c1aa" path="res://assets/scenes/entities/player.tscn" id="1_h2tml"]
+
+[node name="Node2D" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_h2tml")]
+position = Vector2(-70, -5)
+
+[node name="Area" type="Node2D" parent="." groups=["area_container"]]
+
+[node name="GameManager" type="GameManager" parent="."]
+area_path = "res://assets/scenes/areas/area_"
+area_name = "area_1"

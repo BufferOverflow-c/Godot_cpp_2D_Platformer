@@ -14,9 +14,9 @@ void AreaExit::_ready() {
 }
 
 void AreaExit::_on_body_entered(CharacterBody2D *body) {
-    if(get_node<Player>("../Player") && overlaps_body(get_node<Player>("../Player"))) {
-        if(is_open && body == get_node<Player>("../Player")) {
-            GameManager::get_singleton()->next_level();
+    if(get_node<Player>("../../../Player") && overlaps_body(get_node<Player>("../../../Player"))) {
+        if(is_open && body == get_node<Player>("../../../Player")) {
+            GameManager::get_singleton()->next_area();
          }
     }
 }

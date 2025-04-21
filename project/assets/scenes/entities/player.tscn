@@ -97,7 +97,7 @@ _data = {
 radius = 4.0
 height = 14.0
 
-[node name="Player" type="Player"]
+[node name="Player" type="Player" groups=["player"]]
 collision_mask = 768
 
 [node name="Camera2D" type="Camera2D" parent="."]

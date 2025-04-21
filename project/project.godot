@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Tutorial 2D Platformer"
 config/version="Pre-Alpha 0.1"
-run/main_scene="uid://ctneebh8tl2p0"
+run/main_scene="uid://bkmyl6lpca4pt"
 config/features=PackedStringArray("4.4")
 
 [display]
@@ -20,6 +20,12 @@ config/features=PackedStringArray("4.4")
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+area_container=""
+player=""
+player_start_position=""
 
 [input]
 

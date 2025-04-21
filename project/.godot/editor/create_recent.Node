@@ -1,9 +1,9 @@
+GameManager
 Node2D
 Node
 CollisionShape2D
 Sprite2D
 EnergyCell
-GameManager
 AreaExit
 Area2D
 MovingPlatform
@@ -12,4 +12,3 @@ RemoteTransform2D
 PathFollow2D
 Path2D
 AnimationPlayer
-Camera2D

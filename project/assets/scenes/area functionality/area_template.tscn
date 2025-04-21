@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://ctneebh8tl2p0"]
+[gd_scene load_steps=6 format=4 uid="uid://ctneebh8tl2p0"]
 
 [ext_resource type="Texture2D" uid="uid://ntb0befljsre" path="res://assets/sprites/tiles_1.png" id="1_db1nh"]
-[ext_resource type="PackedScene" uid="uid://f33jmnl2c1aa" path="res://assets/scenes/entities/player.tscn" id="2_o23ij"]
 [ext_resource type="PackedScene" uid="uid://ecf0gsku1v0r" path="res://assets/scenes/area functionality/area_exit.tscn" id="3_uh5x1"]
 [ext_resource type="PackedScene" uid="uid://v5xmvpx6fw0i" path="res://assets/scenes/pickups/energy_cell.tscn" id="4_q3j5r"]
 
@@ -288,6 +287,8 @@ sources/0 = SubResource("TileSetAtlasSource_o23ij")
 
 [node name="AreaTemplate" type="Node2D"]
 
+[node name="PlayerStartPosition" type="Node2D" parent="." groups=["player_start_position"]]
+
 [node name="TileMapLayers" type="Node" parent="."]
 
 [node name="one_way_ground" type="TileMapLayer" parent="TileMapLayers"]
@@ -299,14 +300,10 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAGAAUAAAACAAYAAAAGAAQAAAACAAUAAAAGAAMAAAACAAUAAAAGAAIAAAACAAUAAAAGAAEAAAACAAUAAAAGAAAAAAACAAQAAAAFAAUAAAABAAYAAAAFAAQAAAABAAUAAAAFAAMAAAABAAUAAAAFAAIAAAABAAUAAAAFAAEAAAABAAUAAAAFAAAAAAABAAQAAAAEAAUAAAABAAYAAAAEAAQAAAABAAUAAAAEAAMAAAABAAUAAAAEAAIAAAABAAUAAAAEAAEAAAABAAUAAAAEAAAAAAABAAQAAAADAAUAAAABAAYAAAADAAQAAAABAAUAAAADAAMAAAABAAUAAAADAAIAAAABAAUAAAADAAEAAAABAAUAAAADAAAAAAABAAQAAAACAAUAAAABAAYAAAACAAQAAAABAAUAAAACAAMAAAABAAUAAAACAAIAAAABAAUAAAACAAEAAAABAAUAAAACAAAAAAABAAQAAAABAAUAAAABAAYAAAABAAQAAAABAAUAAAABAAMAAAABAAUAAAABAAIAAAABAAUAAAABAAEAAAABAAUAAAABAAAAAAABAAQAAAAAAAUAAAABAAYAAAAAAAQAAAABAAUAAAAAAAMAAAABAAUAAAAAAAIAAAABAAUAAAAAAAEAAAABAAUAAAAAAAAAAAABAAQAAAD//wUAAAABAAYAAAD//wQAAAABAAUAAAD//wMAAAABAAUAAAD//wIAAAABAAUAAAD//wEAAAABAAUAAAD//wAAAAABAAQAAAD+/wUAAAABAAYAAAD+/wQAAAABAAUAAAD+/wMAAAABAAUAAAD+/wIAAAABAAUAAAD+/wEAAAABAAUAAAD+/wAAAAABAAQAAAD9/wUAAAABAAYAAAD9/wQAAAABAAUAAAD9/wMAAAABAAUAAAD9/wIAAAABAAUAAAD9/wEAAAABAAUAAAD9/wAAAAABAAQAAAD8/wUAAAABAAYAAAD8/wQAAAABAAUAAAD8/wMAAAABAAUAAAD8/wIAAAABAAUAAAD8/wEAAAABAAUAAAD8/wAAAAABAAQAAAD7/wUAAAABAAYAAAD7/wQAAAABAAUAAAD7/wMAAAABAAUAAAD7/wIAAAABAAUAAAD7/wEAAAABAAUAAAD7/wAAAAABAAQAAAD6/wUAAAAAAAYAAAD6/wQAAAAAAAUAAAD6/wMAAAAAAAUAAAD6/wIAAAAAAAUAAAD6/wEAAAAAAAUAAAD6/wAAAAAAAAQAAAA=")
 tile_set = SubResource("TileSet_sr7qv")
 
-[node name="Player" parent="." instance=ExtResource("2_o23ij")]
-
 [node name="Platforms" type="Node" parent="."]
 
 [node name="AreaExit" parent="." instance=ExtResource("3_uh5x1")]
 position = Vector2(97, -12)
-
-[node name="GameManager" type="GameManager" parent="."]
 
 [node name="EnergyCells" type="Node2D" parent="."]
 z_index = 1
