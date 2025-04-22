@@ -25,6 +25,7 @@ public:
     double get_speed_modifier() const { return speed_modifier; }
     double get_jump_modifier() const { return jump_modifier; }
     double get_gravity_modifier() const { return gravity_modifier; }
+    Camera2D *get_player_camera() const { return camera; }
 
     // setters
     //void set_position(const Vector2 p_position) { position = p_position; }
@@ -33,14 +34,15 @@ public:
     void set_speed_modifier(const double p_speed_modifier) { speed_modifier = p_speed_modifier; }
     void set_jump_modifier(const double p_jump_modifier) { jump_modifier = p_jump_modifier; }
     void set_gravity_modifier(const double p_gravity_modifier) { gravity_modifier = p_gravity_modifier; }
+    void set_player_camera(Camera2D *p_camera) { camera = p_camera; }
 
-    void teleport_to_position(Vector2 p_position) { set_position(p_position); }
+    void teleport_to_position(Vector2 p_position);
 
 protected:
     static void _bind_methods() {
         // getters && setters
-        //ClassDB::bind_method(D_METHOD("get_position"), &Player::get_position);
-        //ClassDB::bind_method(D_METHOD("set_position", "p_position"), &Player::set_position);
+        ClassDB::bind_method(D_METHOD("get_player_camera"), &Player::get_player_camera);
+        ClassDB::bind_method(D_METHOD("set_player_camera", "p_camera"), &Player::set_player_camera);
 
         ClassDB::bind_method(D_METHOD("get_speed"), &Player::get_speed);
         ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &Player::set_speed);
@@ -60,11 +62,13 @@ protected:
         // methods
         ClassDB::bind_method(D_METHOD("movement", "delta"), &Player::movement);
         ClassDB::bind_method(D_METHOD("teleport_to_position", "p_position"), &Player::teleport_to_position);
+        ClassDB::bind_method(D_METHOD("reenable_camera_position_smoothing"), &Player::reenable_camera_position_smoothing);
 
         // attributes
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed_modifier"), "set_speed_modifier", "get_speed_modifier");
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "jump_modifier"), "set_jump_modifier", "get_jump_modifier");
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "gravity_modifier"), "set_gravity_modifier", "get_gravity_modifier");
+        ADD_PROPERTY(PropertyInfo(Variant::NODE_PATH, "camera2d"), "set_player_camera", "get_player_camera");
 
         // signals
 
@@ -72,6 +76,7 @@ protected:
 
 private:
     void movement(const double delta);
+    void reenable_camera_position_smoothing();
 
 private:
     AnimationPlayer *animation_player{};

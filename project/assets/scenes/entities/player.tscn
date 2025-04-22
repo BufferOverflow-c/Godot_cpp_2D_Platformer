@@ -103,8 +103,11 @@ collision_mask = 768
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -15)
 zoom = Vector2(6, 6)
+process_callback = 0
 limit_smoothed = true
-position_smoothing_speed = 4.0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+drag_vertical_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

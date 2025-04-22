@@ -35,8 +35,6 @@ void GameManager::_ready() {
     if(get_node<Node2D>("../Area")) {
         area_container = get_node<Node2D>("../Area");
     }
-    //area_container = get_tree()->get_first_node_in_group("area_container");
-    //player = get_tree()->get_first_node_in_group("player");
     if(player != nullptr && area_container != nullptr) {
         load_area(starting_area);
     }
@@ -55,19 +53,12 @@ void GameManager::load_area(const int32_t p_area_number) {
        }
     }
 
-    // TODO:: figure out how to call deferred
     if(scene->can_instantiate()) {
         Node *instance = scene->instantiate();
         area_name = instance->get_name();
-        area_container->add_child(instance);
-        area_container->get_child(0)->set_name(instance->get_name());
+        area_container->call_deferred("add_child", instance);
     }
-    if(get_node<Node2D>("../Area/" + area_name + "/PlayerStartPosition")) {
-        reset_energy_cells();
-        Vector2 position = get_node<Node2D>("../Area/" + area_name + "/PlayerStartPosition")->get_position();
-        UtilityFunctions::print(position);
-        player->set_position(position);
-    }
+    call_deferred("_on_tree_exited");
 }
 
 void GameManager::next_area() {
@@ -86,15 +77,9 @@ void GameManager::add_energy_cell() {
 }
 
 void GameManager::_on_tree_exited() {
-    reset_energy_cells();
+    if(get_node<Node2D>("../Area/" + area_name + "/PlayerStartPosition")) {
+        reset_energy_cells();
+        Vector2 position = get_node<Node2D>("../Area/" + area_name + "/PlayerStartPosition")->get_position();
+        player->teleport_to_position(position);
+   }
 }
-//Variant call_deferred_thread_group(const StringName &p_method, const Args &...p_args) {
-//	std::array<Variant, 1 + sizeof...(Args)> variant_args{ Variant(p_method), Variant(p_args)... };
-//	std::array<const Variant *, 1 + sizeof...(Args)> call_args;
-//	for (size_t i = 0; i < variant_args.size(); i++) {
-//		call_args[i] = &variant_args[i];
-//	}
-//	return call_deferred_thread_group_internal(call_args.data(), variant_args.size());
-//}
-//void set_deferred_thread_group(const StringName &p_property, const Variant &p_value);
-//void notify_deferred_thread_group(int32_t p_what);

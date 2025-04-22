@@ -3,11 +3,10 @@
 #include <godot_cpp/classes/animation_player.hpp>
 #include <godot_cpp/classes/input.hpp>
 #include <godot_cpp/classes/input_map.hpp>
+#include <godot_cpp/classes/scene_tree.hpp>
 #include <godot_cpp/classes/sprite2d.hpp>
 
 #include <godot_cpp/core/math.hpp>
-
-#include <godot_cpp/variant/utility_functions.hpp>
 
 #include "portal/area_exit.hpp"
 
@@ -69,4 +68,14 @@ void Player::movement(const double delta) {
 
     set_velocity(velocity);
     move_and_slide();
+}
+
+void Player::teleport_to_position(const Vector2 p_position) {
+    get_node<Camera2D>("Camera2D")->set_position_smoothing_enabled(false);
+    set_position(p_position);
+    get_tree()->connect("physics_frame", Callable(this, "reenable_camera_position_smoothing"));
+}
+
+void Player::reenable_camera_position_smoothing() {
+    get_node<Camera2D>("Camera2D")->set_position_smoothing_enabled(true);
 }
