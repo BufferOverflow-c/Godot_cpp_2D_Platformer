@@ -32,7 +32,8 @@ public:
     void set_energy_cells_collected(const int32_t p_energy_cells_collected) { energy_cells_collected = p_energy_cells_collected; }
 
     void load_area(const int32_t p_area_number);
-    void next_area();
+    void load_area_from_path(const String p_scene_path);
+    void next_area(const String p_scene_path = "");
     void add_energy_cell();
     void reset_energy_cells() { energy_cells_collected = 0; }
     void _on_tree_exited();
@@ -52,7 +53,8 @@ protected:
         ClassDB::bind_method(D_METHOD("set_energy_cells_collected", "p_energy_cells_collected"), &GameManager::set_energy_cells_collected);
 
         ClassDB::bind_method(D_METHOD("load_area", "p_area_number"), &GameManager::load_area);
-        ClassDB::bind_method(D_METHOD("next_area"), &GameManager::next_area);
+        ClassDB::bind_method(D_METHOD("load_area_from_path", "p_scene_path"), &GameManager::load_area_from_path);
+        ClassDB::bind_method(D_METHOD("next_area", "p_scene_path"), &GameManager::next_area);
         ClassDB::bind_method(D_METHOD("add_energy_cell"), &GameManager::add_energy_cell);
         ClassDB::bind_method(D_METHOD("reset_energy_cells"), &GameManager::reset_energy_cells);
         ClassDB::bind_method(D_METHOD("_on_tree_exited"), &GameManager::_on_tree_exited);

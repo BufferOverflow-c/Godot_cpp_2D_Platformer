@@ -1,6 +1,7 @@
 #include "area_exit.hpp"
 
 #include <godot_cpp/classes/character_body2d.hpp>
+#include <godot_cpp/classes/resource_loader.hpp>
 #include <godot_cpp/classes/sprite2d.hpp>
 
 #include "../player.hpp"
@@ -16,7 +17,7 @@ void AreaExit::_ready() {
 void AreaExit::_on_body_entered(CharacterBody2D *body) {
     if(get_node<Player>("../../../Player") && overlaps_body(get_node<Player>("../../../Player"))) {
         if(is_open && body == get_node<Player>("../../../Player")) {
-            GameManager::get_singleton()->next_area();
+            GameManager::get_singleton()->next_area(scene);
          }
     }
 }

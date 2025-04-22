@@ -60,11 +60,32 @@ void GameManager::load_area(const int32_t p_area_number) {
     }
     call_deferred("_on_tree_exited");
 }
+void GameManager::load_area_from_path(const String p_scene_path) {
+    area_path = p_scene_path;
+    Ref<PackedScene> scene = ResourceLoader::get_singleton()->load(p_scene_path);
+    if(scene == nullptr) { return; }
+    if(area_container->get_child_count() > 0) {
+        for(int32_t i{}; i < area_container->get_child_count(); i++) {
+            area_container->get_child(i)->queue_free();
+       }
+    }
 
-void GameManager::next_area() {
+    if(scene->can_instantiate()) {
+        Node *instance = scene->instantiate();
+        area_name = instance->get_name();
+        area_container->call_deferred("add_child", instance);
+    }
+    call_deferred("_on_tree_exited");
+}
+
+void GameManager::next_area(const String p_scene_path) {
     //Ref<Script> game_manager_script = ResourceLoader::get_singleton()->load("res://assets/scripts/game_manager.gd", "Script");
     //String path = game_manager_script->call("set_next_area");
-    load_area(++current_area);
+    if(p_scene_path == "") {
+        load_area(++current_area);
+    } else {
+        load_area_from_path(p_scene_path);
+    }
 }
 
 void GameManager::add_energy_cell() {
@@ -81,5 +102,8 @@ void GameManager::_on_tree_exited() {
         reset_energy_cells();
         Vector2 position = get_node<Node2D>("../Area/" + area_name + "/PlayerStartPosition")->get_position();
         player->teleport_to_position(position);
-   }
+    } else if(get_node<Node2D>(area_path + "/PlayerStartPosition")) {
+        reset_energy_cells();
+        player->teleport_to_position(get_node<Node2D>(area_path + "/PlayerStartPosition")->get_position());
+    }
 }
