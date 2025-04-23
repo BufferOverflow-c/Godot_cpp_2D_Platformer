@@ -6,6 +6,7 @@
 #include "entity/portal/area_exit.hpp"
 
 #include "game_manager/game_manager.hpp"
+#include "gameplay/gameplay.hpp"
 
 #include <godot_cpp/classes/engine.hpp>
 #include <gdextension_interface.h>
@@ -24,6 +25,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
     GDREGISTER_CLASS(MovingPlatform);
     GDREGISTER_CLASS(EnergyCell);
     GDREGISTER_CLASS(AreaExit);
+    GDREGISTER_CLASS(Gameplay);
 
     GDREGISTER_CLASS(GameManager);
     GameManager_singleton = memnew(GameManager);
