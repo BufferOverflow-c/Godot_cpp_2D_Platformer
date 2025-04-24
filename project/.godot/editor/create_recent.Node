@@ -1,8 +1,11 @@
+HUD
+Label
+TextureRect
+Node
 GameManager
 Gameplay
 CanvasLayer
 Node2D
-Node
 CollisionShape2D
 Sprite2D
 EnergyCell
@@ -10,5 +13,3 @@ AreaExit
 Area2D
 MovingPlatform
 AnimatableBody2D
-RemoteTransform2D
-PathFollow2D

@@ -15,11 +15,13 @@ Gameplay::Gameplay() = default;
 Gameplay::~Gameplay() = default;
 
 void Gameplay::_ready() {
-    player = get_node<Player>("Player");
-    area_container = get_node<Node2D>("Area");
+    player = Object::cast_to<Player>(get_node_or_null("Player"));
+    area_container = Object::cast_to<Node2D>(get_node_or_null("Area"));
     //area_path = "";
     //area_name = "";
-    start_game();
+    if(player != nullptr && area_container != nullptr) {
+        start_game();
+    }
 }
 
 void Gameplay::start_game() {
@@ -40,7 +42,7 @@ void Gameplay::load_area(const int32_t p_area_number) {
     area_path = "res://assets/scenes/areas/area_";
     String path = area_path + std::to_string(p_area_number).c_str() + ".tscn";
     Ref<PackedScene> scene = ResourceLoader::get_singleton()->load(path);
-    if(scene == nullptr) { return; }
+    if(scene == NULL) { return; }
 
     unload_area();
 
@@ -54,7 +56,7 @@ void Gameplay::load_area(const int32_t p_area_number) {
 void Gameplay::load_area_from_path(const String p_scene_path) {
     area_path = p_scene_path;
     Ref<PackedScene> scene = ResourceLoader::get_singleton()->load(p_scene_path);
-    if(scene == nullptr) { return; }
+    if(scene == NULL) { return; }
 
     unload_area();
 
@@ -74,12 +76,10 @@ void Gameplay::unload_area() {
 
 void Gameplay::_on_tree_exited() {
     String area_container_name = area_container->get_name();
-    if(get_node<Node2D>(area_container_name + "/" + area_name + "/PlayerStartPosition")) {
-        //GameManager::get_singleton()->reset_energy_cells();
+    if(get_node_or_null(area_container_name + "/" + area_name + "/PlayerStartPosition") != nullptr) {
         Vector2 position = get_node<Node2D>(area_container_name + "/" + area_name + "/PlayerStartPosition")->get_position();
         player->teleport_to_position(position);
     } else {
-        //GameManager::get_singleton()->reset_energy_cells();
         player->teleport_to_position(get_node<Node2D>(area_path + "/PlayerStartPosition")->get_position());
     }
 }

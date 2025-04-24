@@ -21,6 +21,7 @@ public:
     void next_area(const String p_scene_path);
     void add_energy_cell();
     void reset_energy_cells() { energy_cells_collected = 0; }
+    bool inside_tree() { return is_inside_tree(); }
 
 protected:
     static void _bind_methods() {
@@ -30,6 +31,7 @@ protected:
         ClassDB::bind_method(D_METHOD("next_scene", "p_scene_path"), &GameManager::next_area);
         ClassDB::bind_method(D_METHOD("add_energy_cell"), &GameManager::add_energy_cell);
         ClassDB::bind_method(D_METHOD("reset_energy_cells"), &GameManager::reset_energy_cells);
+        ClassDB::bind_method(D_METHOD("inside_tree"), &GameManager::inside_tree);
 
         ADD_PROPERTY(PropertyInfo(Variant::INT, "cells_collected"), "set_energy_cells_collected", "get_energy_cells_collected");
     }

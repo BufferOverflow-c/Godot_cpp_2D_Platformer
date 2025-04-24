@@ -7,6 +7,7 @@
 
 #include "game_manager/game_manager.hpp"
 #include "gameplay/gameplay.hpp"
+#include "ui/hud.hpp"
 
 #include <godot_cpp/classes/engine.hpp>
 #include <gdextension_interface.h>
@@ -16,6 +17,7 @@
 using namespace godot;
 
 static GameManager *GameManager_singleton = nullptr;
+static HUD *HUD_singleton = nullptr;
 
 void initialize_example_module(ModuleInitializationLevel p_level) {
   if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
@@ -30,6 +32,10 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
     GDREGISTER_CLASS(GameManager);
     GameManager_singleton = memnew(GameManager);
     Engine::get_singleton()->register_singleton("GameManager", GameManager::get_singleton());
+
+    GDREGISTER_CLASS(HUD);
+    HUD_singleton = memnew(HUD);
+    Engine::get_singleton()->register_singleton("HUD", HUD::get_singleton());
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

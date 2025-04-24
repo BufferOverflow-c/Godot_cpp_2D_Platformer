@@ -1,5 +1,7 @@
 res://assets/scenes/area functionality/area_template.tscn
+res://assets/scenes/ui/ui settings/ui_label_settings.tres
 res://assets/scenes/areas/area_1.tscn
 res://assets/scenes/areas/area_2.tscn
 res://assets/scenes/area functionality/gameplay.tscn
 res://assets/scenes/entities/player.tscn
+res://assets/scenes/ui/hud.tscn
