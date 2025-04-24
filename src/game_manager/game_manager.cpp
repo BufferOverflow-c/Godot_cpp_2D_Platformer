@@ -26,7 +26,7 @@ GameManager *GameManager::get_singleton() {
 void GameManager::_ready() {}
 
 void GameManager::next_area(const String p_scene_path) {
-    Gameplay *gameplay{};
+    Gameplay *gameplay{get_node<Gameplay>("../../Gameplay")};
     gameplay->next_area(p_scene_path);
     reset_energy_cells();
 }
