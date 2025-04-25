@@ -1,10 +1,10 @@
 res://assets/scenes/area functionality/area_exit.tscn::f48427323d5c2b8658721792190f8c60::1745244924::res://.godot/exported/133200997/export-3073051d637fc0e7ab2d384a99f94c7b-area_exit.scn
-res://assets/scenes/area functionality/area_template.tscn::bcd78671b8113cdef8bff06a9463e5f7::1745579821::res://.godot/exported/133200997/export-a230e46259662ddfd659b41013ffebd0-area_template.scn
-res://assets/scenes/area functionality/gameplay.tscn::4121bd78f4f4fc353fbb374a6c759b71::1745579821::res://.godot/exported/133200997/export-e96321677a691bb1be37632369d8a1cb-gameplay.scn
-res://assets/scenes/areas/area_1.tscn::f3b59cdd2610ebd372408656710e7541::1745579821::res://.godot/exported/133200997/export-c9b330d146321f4a3ef3abe505d02375-area_1.scn
-res://assets/scenes/areas/area_2.tscn::f124af8e2391bcb6f4e446f0496240cd::1745579821::res://.godot/exported/133200997/export-98e3a2658978f5259b8bdf8e57fdba50-area_2.scn
-res://assets/scenes/entities/player.tscn::780d30ef35d91e4b0cf3d82bc82688cd::1745579821::res://.godot/exported/133200997/export-47ef939a8c0be9b0b93d76ce75ad67af-player.scn
+res://assets/scenes/area functionality/area_template.tscn::bcd78671b8113cdef8bff06a9463e5f7::1745583615::res://.godot/exported/133200997/export-a230e46259662ddfd659b41013ffebd0-area_template.scn
+res://assets/scenes/area functionality/gameplay.tscn::4121bd78f4f4fc353fbb374a6c759b71::1745583615::res://.godot/exported/133200997/export-e96321677a691bb1be37632369d8a1cb-gameplay.scn
+res://assets/scenes/areas/area_1.tscn::f3b59cdd2610ebd372408656710e7541::1745583615::res://.godot/exported/133200997/export-c9b330d146321f4a3ef3abe505d02375-area_1.scn
+res://assets/scenes/areas/area_2.tscn::f124af8e2391bcb6f4e446f0496240cd::1745583615::res://.godot/exported/133200997/export-98e3a2658978f5259b8bdf8e57fdba50-area_2.scn
+res://assets/scenes/entities/player.tscn::780d30ef35d91e4b0cf3d82bc82688cd::1745583615::res://.godot/exported/133200997/export-47ef939a8c0be9b0b93d76ce75ad67af-player.scn
 res://assets/scenes/obstacles/moving_platform_large.tscn::5da8684193bc744366572b4adaf63af4::1744654049::res://.godot/exported/133200997/export-e6096c8ac574e3f48878779cb225696e-moving_platform_large.scn
 res://assets/scenes/pickups/energy_cell.tscn::c51fcd32ce6f8d6783bdf66265f1f146::1745244924::res://.godot/exported/133200997/export-8de9eab9422657b919c3c4cc88732a8e-energy_cell.scn
-res://assets/scenes/ui/ui settings/ui_label_settings.tres::0ae9f38e758d8b747d5e3dd803199e53::1745579821::res://.godot/exported/133200997/export-43b6e16d3d618eb74c51b1579ac4d3d1-ui_label_settings.res
-res://assets/scenes/ui/hud.tscn::1a6e91136b9b6485382fd7108f27db5f::1745579821::res://.godot/exported/133200997/export-656a4d35227ddcd32fb14d75f2b3f75f-hud.scn
+res://assets/scenes/ui/ui settings/ui_label_settings.tres::0ae9f38e758d8b747d5e3dd803199e53::1745583615::res://.godot/exported/133200997/export-43b6e16d3d618eb74c51b1579ac4d3d1-ui_label_settings.res
+res://assets/scenes/ui/hud.tscn::1a6e91136b9b6485382fd7108f27db5f::1745583616::res://.godot/exported/133200997/export-656a4d35227ddcd32fb14d75f2b3f75f-hud.scn
