@@ -4,20 +4,17 @@
 [ext_resource type="LabelSettings" uid="uid://5jha2wafok73" path="res://assets/scenes/ui/ui settings/ui_label_settings.tres" id="2_1m4ne"]
 
 [node name="HUD" type="HUD"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="EnergyCellTexture" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 40.0
-offset_top = 104.0
+offset_top = 96.0
 offset_right = 88.0
-offset_bottom = 168.0
+offset_bottom = 160.0
 texture = ExtResource("1_7fvg5")
 stretch_mode = 4
+metadata/_edit_group_ = true
 
 [node name="EnergyCellLabel" type="Label" parent="EnergyCellTexture"]
 layout_mode = 1
@@ -28,12 +25,12 @@ offset_left = 48.0
 offset_top = -16.0
 offset_right = 116.0
 offset_bottom = 24.0
-grow_vertical = 2
 text = "x 00"
 label_settings = ExtResource("2_1m4ne")
 vertical_alignment = 1
 
 [node name="PortalLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
@@ -41,3 +38,30 @@ offset_right = 80.0
 offset_bottom = 63.0
 text = "Portal Closed..."
 label_settings = ExtResource("2_1m4ne")
+
+[node name="StartButtonLayer" type="CanvasLayer" parent="."]
+
+[node name="StartButton" type="Button" parent="StartButtonLayer"]
+offset_left = 896.0
+offset_top = 464.0
+offset_right = 1040.0
+offset_bottom = 495.0
+metadata/_edit_group_ = true
+
+[node name="StartButtonLabel" type="Label" parent="StartButtonLayer/StartButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -20.0
+offset_right = 66.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[ Start ]"
+label_settings = ExtResource("2_1m4ne")
+horizontal_alignment = 1
+vertical_alignment = 1

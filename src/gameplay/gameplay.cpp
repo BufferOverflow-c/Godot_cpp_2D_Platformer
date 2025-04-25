@@ -1,7 +1,10 @@
 #include "gameplay.hpp"
 
+#include <godot_cpp/classes/canvas_layer.hpp>
+#include <godot_cpp/classes/label.hpp>
 #include <godot_cpp/classes/packed_scene.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/classes/texture_rect.hpp>
 
 #include "../game_manager/game_manager.hpp"
 
@@ -16,15 +19,17 @@ Gameplay::~Gameplay() = default;
 
 void Gameplay::_ready() {
     player = Object::cast_to<Player>(get_node_or_null("Player"));
+    ERR_FAIL_NULL(player);
     area_container = Object::cast_to<Node2D>(get_node_or_null("Area"));
-    //area_path = "";
-    //area_name = "";
-    if(player != nullptr && area_container != nullptr) {
-        start_game();
-    }
+    ERR_FAIL_NULL(area_container);
 }
 
 void Gameplay::start_game() {
+    get_node<CanvasLayer>("CanvasLayer/HUD/StartButtonLayer")->hide();
+    player->show();
+    area_container->show();
+    get_node<TextureRect>("CanvasLayer/HUD/EnergyCellTexture")->show();
+    get_node<Label>("CanvasLayer/HUD/PortalLabel")->show();
     load_area(starting_area);
 }
 
